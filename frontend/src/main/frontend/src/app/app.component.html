@@ -1,0 +1,33 @@
+<h1>Calculator API</h1>
+<div class="container" >
+  <div class="form-group container border" style="color: red">
+    <div class="row" *ngFor="let entry of entries; let i = index">
+      <div class="">
+        <input myNumberOnly class="form-control form-control-sm " [style.visibility]="(entry.arguments > 0) ? 'visible' : 'hidden' " type="text"
+               [(ngModel)]=entry.op1
+               required>
+      </div>
+      <div class="">
+        <input myNumberOnly class="form-control form-control-sm" id="{{entry.operation}}_2 " [style.visibility]="(entry.arguments > 1) ? 'visible' : 'hidden'" type="text"
+               [(ngModel)]=entry.op2 required>
+      </div>
+
+      <div class="">
+        <button class="align-items-center form-control form-control-sm"(click)="calculate( entry.symbol, entry.operation ,entry.op1, entry.op2)">{{entry.description}}</button>
+      </div>
+      <br>
+
+    </div>
+
+  </div>
+
+
+  <div [style.visibility]="data.readyToFetch && data.error.length===0 ? 'visible' : 'hidden' " class="container border">
+    Result : {{data.op1}} {{data.symbol}} {{data.op2}} = {{data.result}}
+  </div>
+
+  <div [style.visibility]="data.readyToFetch && data.error.length!=0 ? 'visible' : 'hidden' " class="container border error">
+    Error : {{data.error}}
+  </div>
+
+</div>
