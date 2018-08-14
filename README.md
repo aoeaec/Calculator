@@ -29,11 +29,9 @@ __Installation__
 Step 1 : Start backend Server.
 
 From the top level directory of our project, run:
-1. mvn clean install
-	Step 1 will build the project, download all dependencies for backend and frontend modules.
-2.cd backend
-3.mvn spring-boot:run
-This will run the backend server.
+1. mvn clean install  ---	Step 1 will build the project, download all dependencies for backend and frontend modules.
+2. cd backend
+3. mvn spring-boot:run  --- This will run the backend server.
 
 Step 2: Start Angular Application
 From the top level directory of our project
